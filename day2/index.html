@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hello world</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div id="root">
+    <div @click="handleClick">
+        {{message}}
+    </div>
+    <customname></customname>
+</div>
+<script>
+
+    // 可以在根实例中使用组件
+    Vue.component('customname',{
+        template:'<div> hello item</div>'
+    })
+
+    var app = new Vue({
+        el:'#root',
+        data:{
+            message:'hello world'
+        },
+        methods:{
+            handleClick:function () {
+                alert("hello world")
+            }
+        }
+    })
+
+</script>
+
+</body>
+</html>
